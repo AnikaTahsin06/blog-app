@@ -1,0 +1,16 @@
+<template>
+    <require from="../resources/elements/blog-post"></require>
+    <div class="alert alert-danger" if.bind="error">
+        ${error}
+    </div>
+    <div class="alert alert-dark" if.bind="title">
+        ${title}
+    </div>
+    <div repeat.for="post of posts">
+        <blog-post post.bind="post"></blog-post>
+        <template if.bind="viewPost">
+            <a route-href="route: post-view; params.bind: {slug: post.slug}">View Post &raquo;</a>
+            <hr>
+        </template>
+    </div>
+</template>

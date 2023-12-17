@@ -1,0 +1,11 @@
+<template>
+  <require from="../value-converters/date-format"></require>
+  <article class="blog-post">
+    <h2 class="display-5 link-body-emphasis mb-1">${post.title}</h2>
+    <p class="blog-post-meta">${ post.createdAt | dateFormat } by <a href="#">${post.author}</a></p>
+    <p>
+      <a href="" repeat.for="tag of post.tags"><span class="badge rounded-pill bg-info">${tag}</span></a>
+    </p>
+    <p>${post.body}</p>
+  </article>
+</template>

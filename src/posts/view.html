@@ -1,0 +1,7 @@
+<template>
+  <require from="../resources/elements/blog-post"></require>
+  <div class="alert alert-danger" if.bind="error">
+    ${error}
+  </div>
+  <blog-post if.bind="!error" post.bind="post"></blog-post>
+</template>
