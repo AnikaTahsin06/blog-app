@@ -4,7 +4,7 @@ import { Router } from "aurelia-router";
 import { AuthService } from "../common/services/auth-service";
 
 @inject(EventAggregator, Router, AuthService)
-export class Login {
+export class Signup {
   constructor(EventAggregator, Router, AuthService) {
     this.ea = EventAggregator;
     this.router = Router;
@@ -15,10 +15,10 @@ export class Login {
     this.error = null;
   }
 
-  login() {
+  signup() {
     this.error = null;
     this.authService
-      .login(this.name)
+      .signup(this.name)
       .then((data) => {
         this.ea.publish("user", data.name);
         this.router.navigateToRoute("home");

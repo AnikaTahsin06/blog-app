@@ -1,7 +1,10 @@
 <template>
   <require from="../resources/elements/blog-post"></require>
-  <div class="alert alert-danger" if.bind="error">
-    ${error}
-  </div>
+  <div class="alert alert-danger" if.bind="error">${error}</div>
   <blog-post if.bind="!error" post.bind="post"></blog-post>
+  <a
+    if.bind="authService.currentUser === post.author"
+    route-href="route: post-edit; params.bind: { slug: post.slug }"
+    >Edit Post</a
+  >
 </template>

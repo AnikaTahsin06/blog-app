@@ -4,7 +4,11 @@
     <h2 class="display-5 link-body-emphasis mb-1">${post.title}</h2>
     <p class="blog-post-meta">${ post.createdAt | dateFormat } by <a href="#">${post.author}</a></p>
     <p>
-      <a href="" repeat.for="tag of post.tags"><span class="badge rounded-pill bg-info">${tag}</span></a>
+    <div class="d-flex gap-2">
+      <a route-href="route: tag-view; params.bind: {tag: tag}" repeat.for="tag of post.tags">
+        <span class="badge rounded-pill bg-info">${tag}</span>
+      </a>
+    </div>
     </p>
     <p>${post.body}</p>
   </article>
